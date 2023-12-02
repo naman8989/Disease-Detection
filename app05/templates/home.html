@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In home page</title>
+</head>
+<body>
+    <h3>This is Home Page</h3>
+    <form id='myform' method="GET">
+        <!-- {% csrf_token %} -->
+        <input name="name1" placeholder="name1" value="myname1" type="text">
+        <input name="name2" placeholder="name2" value="myname2" type="text">
+        <input name="name3" placeholder="name3" value="myname3" type="text">
+        <input name="name4" placeholder="name4" value="myname4" type="text">
+        <button id="submiting"> Send </button>
+    </form>
+    {{predictResult}}
+</body>
+</html>
+<script>
+
+      function onClick(){
+        document.getElementById('submiting').click();
+      }
+      var recData = JSON.parse('{{ predictResult | escapejs }}');
+
+</script>
